@@ -20,7 +20,13 @@ S = zeros(n);
 %       number of examples).
 %
 
+Sigma = zeros(n);
 
+for i = 1:m
+    Sigma += X(i, :)' * X(i, :);
+end
+
+[U, S, V] = svd(Sigma / m);
 
 
 
